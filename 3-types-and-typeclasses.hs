@@ -7,10 +7,10 @@
  - Have a play with the Colour in ghci, try the succ and pred functions and so on.
  -}
 data Colour = Red | Orange | Yellow | Green | Blue | Indigo | Violet
-    deriving (Eq, Ord, Show, Bounded, Enum)   
+    deriving (Eq, Ord, Show, Bounded, Enum)
 
 {-
- - Again, you should be able to write these functions in one line, 
+ - Again, you should be able to write these functions in one line,
  - using the information from the chapter http://learnyouahaskell.com/types-and-typeclasses
  - and the chapter before
  -}
@@ -22,7 +22,7 @@ data Colour = Red | Orange | Yellow | Green | Blue | Indigo | Violet
 firstColour = minBound :: Colour
 
 -- List the colours in reverse order
--- reverseColourOrder = reverse [Red..Violet] :: [Colour]
+reverseColourOrder = reverse ([Red..Violet]) :: [Colour]
 -- Todo: Compile error
 
 {-

@@ -16,7 +16,7 @@ englishDigit _ = "Unknown"
 -- it should return undefined for division by zero
 divTuple :: (Eq a, Fractional a) => (a, a) -> a
 divTuple (_,0)	= undefined
-divTuple (x,y)	= x/y
+divTuple (x,y)	= x / y
 -- Todo: Runtime error
 
 -- if the first three numbers in a list are all zero, return True
