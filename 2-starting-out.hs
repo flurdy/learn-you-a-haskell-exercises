@@ -44,7 +44,7 @@ splitAtIndex k l = (take k l, drop k l)
 -- Drop the element at index k in list l
 -- For example "dropK 3 [0,0,0,1,0,0,0]" returns [0,0,0,0,0,0]
 -- dropK k l = [ init x ++ y  | (x,y) <- splitAtIndex k l ]
--- compile error
+-- Todo: compile error
 
 -- Extract elements between ith and kth element in list l. Including i, but not k
 -- For example, "slice 3 6 [0,0,0,1,2,3,0,0,0]" returns [1,2,3]
