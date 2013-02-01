@@ -12,7 +12,8 @@ power x y  = x * power x (y-1)
 fib :: (Num a, Eq a) => a -> [a]
 fib 0 = [0]
 fib 1 = 1 : fib 0
-fib x = x : fib (x-1)
+fib x = head (drop 1 lastfib) + head lastfib : lastfib
+	where lastfib = fib (x-1)
 
 -- This is not recursive, but have a go anyway.
 -- Create a function which takes two parameters, a number and a step
