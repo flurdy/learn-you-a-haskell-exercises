@@ -12,7 +12,7 @@ power x y  = x * power x (y-1)
 fib :: (Num a, Eq a) => a -> [a]
 fib 0 = [0]
 fib 1 = 1 : fib 0
-fib x = head (drop 1 lastfib) + head lastfib : lastfib
+fib x = last (take 2 lastfib) + head lastfib : lastfib
 	where lastfib = fib (x-1)
 
 -- This is not recursive, but have a go anyway.
@@ -22,7 +22,8 @@ fib x = head (drop 1 lastfib) + head lastfib : lastfib
 --			    stepReverseSign -3 1 = 4
 --			    stepReverseSign 1 2 = -3
 stepReverseSign :: (Fractional a, Ord a) => a -> a -> a
-stepReverseSign a = undefined
+stepReverseSign number step = if number < 0 then total else negate total
+	where total = abs number + step
 
 {- Lets calculate pi.
  - The Leibniz formula for pi (http://en.wikipedia.org/wiki/Leibniz_formula_for_%CF%80)
