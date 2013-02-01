@@ -57,8 +57,14 @@ stepReverseSign number step = if number < 0 then total else negate total
  -}
 
 piCalc :: (Fractional a, Integral b, Ord a) => a -> (a, b)
-piCalc a = undefined
+piCalc tolerance = piCalc' 1 0.0 tolerance 0
 
 piCalc' :: (Ord a, Fractional a, Integral b) => a -> a -> a -> b -> (a, b)
-piCalc' w x y z = undefined
+piCalc' denominator currentPi tolerance recurseCount
+	| abs(currentPi - nextPi) < tolerance  = (currentPi,recurseCount)
+	| otherwise = piCalc' (stepReverseSign denominator 2) nextPi tolerance (recurseCount+1)
+	where nextPi = currentPi + (4/denominator)
+
+
+
 
